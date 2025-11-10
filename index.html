@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kejuutan Buat Sayangg 💕</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff0f5;
+    overflow: hidden;
+  }
+
+  .slide {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .active {
+    display: flex;
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  .intro-text {
+    font-size: 22px;
+    color: #d63384;
+    font-weight: 600;
+    line-height: 1.7;
+    max-width: 600px;
+    animation: floatingText 3s ease-in-out infinite;
+    text-shadow: 0 0 8px rgba(255, 192, 203, 0.4);
+  }
+
+  @keyframes floatingText {
+    0%, 100% { transform: translateY(0); letter-spacing: 0px; }
+    50% { transform: translateY(-10px); letter-spacing: 1px; }
+  }
+
+  .slide img {
+    width: 300px;
+    max-width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    margin: 25px 0;
+    animation: popIn 1.5s ease;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .love-btn {
+    background: none;
+    border: none;
+    font-size: 45px;
+    cursor: pointer;
+    animation: pulse 1.3s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+
+  #slide1 { background: linear-gradient(180deg, #ffe6f2, #fff0f5); }
+  #slide2 { background: linear-gradient(180deg, #ffd6e8, #fff0f5); }
+  #slide3 { background: linear-gradient(180deg, #ffe6f2, #fff0f5); }
+  #slide4 { background: linear-gradient(180deg,#ffd6e8,#fff0f5); color: #d63384; font-size: 24px; flex-direction: column; }
+  #slide5 { background: linear-gradient(180deg,#fff0f5,#ffd6e8); color: #d63384; font-size: 24px; flex-direction: column; }
+
+  #slide4 .heart {
+    font-size: 80px;
+    animation: heartBeat 1s infinite ease-in-out;
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* Slide 5: Foto + teks */
+  .photo-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .photo-text {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .photo-text.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .photo-text img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  }
+
+  .photo-text p {
+    font-size: 18px;
+    color: #d63384;
+    line-height: 1.6;
+    max-width: 55%;
+  }
+
+  /* Confetti */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6b81;
+    top: -10px;
+    animation: fall 3s linear infinite;
+  }
+
+  @keyframes fall {
+    0% {transform: translateY(0) rotate(0);}
+    100% {transform: translateY(100vh) rotate(360deg);}
+  }
+
+  /* Floating elements kecil di pinggir */
+  .floating {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: floatAnim linear infinite;
+  }
+
+  @keyframes floatAnim {
+    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity:0.8; }
+    50% { transform: translateY(-8px) translateX(4px) rotate(180deg); opacity:1; }
+    100% { transform: translateY(0) translateX(0) rotate(360deg); opacity:0.8; }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .slide img { width: 200px; }
+    .photo-text { flex-direction: column !important; gap: 20px; }
+    .photo-text img { width: 180px; height: 180px; }
+    .photo-text p { max-width: 100%; text-align: center; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Slide 1 -->
+<div id="slide1" class="slide active">
+  <h2 class="intro-text">
+    Alooww cayangg 💕<br>
+    Happyy birthday my lovee<br>
+  </h2>
+  <img src="./assets/gambar1.jpg" alt="gambar1">
+  <button class="love-btn" onclick="showSlide(2)">❤️</button>
+</div>
+
+<!-- Slide 2 -->
+<div id="slide2" class="slide">
+  <h2 class="intro-text">
+    Hari ini hari spesial banget lohh 🎉<br>
+    Aku memang nggak punya kado mahal,<br>
+    tapi ada aku yang selalu buat ayangg spesial 💞
+  </h2>
+  <img src="./assets/gambar2.jpg" alt="gambar2">
+  <button class="love-btn" onclick="showSlide(3)">💖</button>
+</div>
+
+<!-- Slide 3 -->
+<div id="slide3" class="slide">
+  <h2 class="intro-text">
+    sebelum ituu maacii  yaa sayangg sudaa lahir, sudaa tumbuh jadi orang baik,<br>
+    perjalanan 20 tahun ituu ndaa mudah lohh sayang hebatt bisa beertahan sejauh inii
+  </h2>
+  <img src="./assets/gambar3.gif" alt="gambar3">
+  <button class="love-btn" onclick="showSlide(4)">❤️</button>
+</div>
+
+<!-- Slide 4 -->
+<div id="slide4" class="slide">
+  <h2 class="intro-text">
+    cieee ciee yangg sudaa berkepala duaa mhehehe 😆<br>
+    yukk sayangg inii hadiahh nyaaw
+  </h2>
+  <img src="./assets/gambar4.jpg" alt="gambar4">
+  <button class="love-btn" onclick="showSlide(5)">💞</button>
+</div>
+
+<!-- Slide 5 -->
+<div id="slide5" class="slide">
+  <h1 style="font-size: 36px; margin-bottom: 10px;">Selamat Ulang Tahun, Sayang 🎂</h1>
+  <div class="photo-text-container">
+    <!-- Foto pertama kiri, teks kanan -->
+    <div class="photo-text">
+      <img src="./assets/foto52.png" alt="Foto 1">
+      <p class="text-left">
+        Teruntukk sayangkuu tercinta yang sudah beranjak usia ke-20 tahun 💕<br>
+        Aku berdoa yang terbaik buat sayang, semoga segala doa dan keinginan ayangg tercapai.<br>
+        20 tahun itu bukan hal mudah untuk ditempuh, that's why aku sangat bangga sama ayang bisa bertahan sejauh ini.
+        Maacii banyak ya sudah melakukan yang terbaik selama ini. Bahkan jika orang lain tidak bisa melihat perjuangan ayang, aku ada disini yang bisa melihat semua itu.<br><br>
+        Ada aku yang akan selalu menemani ayang, walau dari kejauhan. I love you so much 💖
+      </p>
+    </div>
+
+    <!-- Foto kedua kanan, teks kiri -->
+    <div class="photo-text reverse">
+      <img src="./assets/foto51.png" alt="Foto 2">
+      <p class="text-left">
+        Ini hanyaa hadiah sederhana dari akuu untukk sayang, semoga sukaa yaaw 💞
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSlide(n){
+  document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+  document.getElementById('slide'+n).classList.add('active');
+
+  if(n===5){
+    startConfetti();
+    startFloating(); // floating kecil muncul
+  }
+}
+
+function startConfetti(){
+  for(let i=0;i<25;i++){
+    let c=document.createElement('div');
+    c.classList.add('confetti');
+    c.style.left=Math.random()*100+'vw';
+    c.style.backgroundColor=`hsl(${Math.random()*360},70%,70%)`;
+    c.style.animationDuration=(2+Math.random()*3)+'s';
+    document.getElementById('slide5').appendChild(c);
+    setTimeout(()=>c.remove(),4000);
+  }
+}
+
+// Floating elements kecil bergerak tipis-tipis hanya di pinggir kiri & kanan
+function startFloating(){
+  const slide = document.getElementById('slide5');
+  const colors = ['#ff69b4','#ffd700','#ffb6c1','#ff1493'];
+  for(let i=0; i<15; i++){
+    const el = document.createElement('div');
+    el.classList.add('floating');
+
+    // posisi kiri (0-10vw) atau kanan (90-100vw)
+    if(Math.random() < 0.5){
+      el.style.left = (Math.random()*10) + 'vw'; // kiri
+    } else {
+      el.style.left = (90 + Math.random()*10) + 'vw'; // kanan
+    }
+
+    el.style.top = Math.random()*80 + 'vh';
+    el.style.width = (5 + Math.random()*8) + 'px';
+    el.style.height = el.style.width;
+    el.style.backgroundColor = colors[Math.floor(Math.random()*colors.length)];
+    el.style.animationDuration = (3 + Math.random()*3) + 's';
+    slide.appendChild(el);
+    setTimeout(()=>el.remove(), 5000);
+  }
+  setTimeout(startFloating, 1000); // ulangi terus
+}
+</script>
+
+</body>
+</html>
